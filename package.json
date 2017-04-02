@@ -1,6 +1,6 @@
 {
   "name": "default-number",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Get a default number when a number is a non-number, a NaN or out of range.",
   "main": "index.js",
   "files": [

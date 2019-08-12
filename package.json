@@ -32,13 +32,13 @@
   },
   "homepage": "https://github.com/sttk/default-number#readme",
   "devDependencies": {
-    "browserify": "^14.1.0",
+    "browserify": "^16.5.0",
     "chai": "^3.5.0",
-    "eslint": "^3.19.0",
+    "eslint": "^6.1.0",
     "istanbul": "^0.4.5",
     "istanbul-coveralls": "^1.0.3",
     "mocha": "^3.2.0",
-    "uglify-js": "^2.8.20"
+    "uglify-js": "^3.6.0"
   },
   "dependencies": {
     "default-val": "^0.1.4"

@@ -20,17 +20,17 @@ describe('defaultNumber', function() {
       expect(defaultNumber([], 123)).to.equal(123);
       expect(defaultNumber({ a: 1, b: { c: 2 } }, 123)).to.equal(123);
       expect(defaultNumber(new Date(0), 123)).to.equal(123);
-    })
+    });
 
     it('Should return defValue when value is NaN', function() {
       expect(defaultNumber(NaN, 123)).to.equal(123);
-    })
+    });
 
     it('Should return value when value is valid', function() {
       expect(defaultNumber(100, 123)).to.equal(100);
       expect(defaultNumber(0, 123)).to.equal(0);
       expect(defaultNumber(-10, 123)).to.equal(-10);
-    })
+    });
   });
 
   describe('When arguments is value, defValue and minValue', function() {
@@ -44,7 +44,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 122, 123)).to.equal(123);
       expect(defaultNumber(null, 0, 1)).to.equal(1);
       expect(defaultNumber(null, -3, -2)).to.equal(-2);
-    })
+    });
 
     it('Should return value/defValue when value/defValue is greater than ' +
     '\n\tminValue', function() {
@@ -55,7 +55,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 124, 123)).to.equal(124);
       expect(defaultNumber(null, 2, 1)).to.equal(2);
       expect(defaultNumber(null, -1, -2)).to.equal(-1);
-    })
+    });
 
     it('Should ignore minValue when minValue is non-number', function() {
       expect(defaultNumber(122, 0, null)).to.equal(122);
@@ -73,7 +73,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 122, '123')).to.equal(122);
       expect(defaultNumber(null, 0, '1')).to.equal(0);
       expect(defaultNumber(null, -3, '-2')).to.equal(-3);
-    })
+    });
 
     it('Should ignore minValue when minValue is NaN', function() {
       expect(defaultNumber(122, 0, NaN)).to.equal(122);
@@ -83,7 +83,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 122, NaN)).to.equal(122);
       expect(defaultNumber(null, 0, NaN)).to.equal(0);
       expect(defaultNumber(null, -3, NaN)).to.equal(-3);
-    })
+    });
   });
 
   describe('When arguments is value, defValue, minValue and maxValue',
@@ -98,7 +98,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 122, 123, 125)).to.equal(123);
       expect(defaultNumber(null, 0, 1, 3)).to.equal(1);
       expect(defaultNumber(null, -3, -2, 1)).to.equal(-2);
-    })
+    });
 
     it('Should return maxValue when value/defValue is less than maxValue',
     function() {
@@ -109,7 +109,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 126, 123, 125)).to.equal(125);
       expect(defaultNumber(null, 4, 1, 3)).to.equal(3);
       expect(defaultNumber(null, 2, -2, 1)).to.equal(1);
-    })
+    });
 
     it('Should return value/defValue when value/defValue is in range',
     function() {
@@ -120,7 +120,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 124, 123, 125)).to.equal(124);
       expect(defaultNumber(null, 2, 1, 3)).to.equal(2);
       expect(defaultNumber(null, -1, -2, 1)).to.equal(-1);
-    })
+    });
 
     it('Should ignore minValue when minValue is non-number', function() {
       expect(defaultNumber(124, 0, '126', 125)).to.equal(124);
@@ -130,7 +130,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 124, '123', 125)).to.equal(124);
       expect(defaultNumber(null, 2, '1', 3)).to.equal(2);
       expect(defaultNumber(null, -1, '-2', 1)).to.equal(-1);
-    })
+    });
 
     it('Should ignore minValue when minValue is NaN', function() {
       expect(defaultNumber(124, 0, NaN, 125)).to.equal(124);
@@ -140,7 +140,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 124, NaN, 125)).to.equal(124);
       expect(defaultNumber(null, 2, NaN, 3)).to.equal(2);
       expect(defaultNumber(null, -1, NaN, 1)).to.equal(-1);
-    })
+    });
 
     it('Should ignore maxValue when maxValue is non-number', function() {
       expect(defaultNumber(124, 0, 123, '125')).to.equal(124);
@@ -150,7 +150,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 124, 123, '125')).to.equal(124);
       expect(defaultNumber(null, 2, 1, '3')).to.equal(2);
       expect(defaultNumber(null, -1, -2, '1')).to.equal(-1);
-    })
+    });
 
     it('Should ignore maxValue when maxValue is NaN', function() {
       expect(defaultNumber(124, 0, 123, NaN)).to.equal(124);
@@ -160,7 +160,7 @@ describe('defaultNumber', function() {
       expect(defaultNumber(null, 124, 123, NaN)).to.equal(124);
       expect(defaultNumber(null, 2, 1, NaN)).to.equal(2);
       expect(defaultNumber(null, -1, -2, NaN)).to.equal(-1);
-    })
+    });
   });
 
 });

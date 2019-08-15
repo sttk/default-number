@@ -11,9 +11,9 @@
     "test": "mocha",
     "coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
     "coveralls": "nyc --reporter=text-lcov npm test | coveralls",
-    "web:install": "npm i phantomjs-prebuilt mocha-phantomjs",
-    "web:build": "browserify index.js --standalone defaultNumber | uglifyjs --compress --mangle -o web/default-number.js && node test/web/make.js",
-    "web:test": "mocha-phantomjs -p node_modules/.bin/phantomjs test/web/default-number.test.html"
+    "web:build": "browserify index.js --standalone defaultNumber | uglifyjs --compress --mangle -o web/default-number.js && node tool/make-web-test.js",
+    "web:test": "node tool/open-web-test.js",
+    "build": "npm run lint && npm run coverage && npm run web:build"
   },
   "repository": {
     "type": "git",

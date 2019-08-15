@@ -9,8 +9,8 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha",
-    "coverage": "istanbul cover _mocha",
-    "coveralls": "istanbul cover _mocha && istanbul-coveralls",
+    "coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "coveralls": "nyc --reporter=text-lcov npm test | coveralls",
     "web:install": "npm i phantomjs-prebuilt mocha-phantomjs",
     "web:build": "browserify index.js --standalone defaultNumber | uglifyjs --compress --mangle -o web/default-number.js && node test/web/make.js",
     "web:test": "mocha-phantomjs -p node_modules/.bin/phantomjs test/web/default-number.test.html"
@@ -34,10 +34,10 @@
   "devDependencies": {
     "browserify": "^16.5.0",
     "chai": "^3.5.0",
+    "coveralls": "^3.0.6",
     "eslint": "^6.1.0",
-    "istanbul": "^0.4.5",
-    "istanbul-coveralls": "^1.0.3",
     "mocha": "^3.2.0",
+    "nyc": "^14.1.1",
     "uglify-js": "^3.6.0"
   },
   "dependencies": {
